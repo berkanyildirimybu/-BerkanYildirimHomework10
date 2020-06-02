@@ -12,7 +12,7 @@ public class Fractional {
 	}
 	
 	Fractional simplify() {
-		System.out.println("Stupid Changes");
+		// student code
 	}
 	
 	// Not a Number (NaN) 
@@ -21,7 +21,6 @@ public class Fractional {
 	}
 
 	boolean isInfinity() {
-		
 		return this.denominator == 0 && this.numerator != 0;
 	}
 	
