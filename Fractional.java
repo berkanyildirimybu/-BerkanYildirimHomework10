@@ -7,7 +7,8 @@ public class Fractional {
 	public static final String NegativeInfinity = "-Infinity";
 	
 	Fractional(long numerator, long denominator) {	
-		// student code
+		this.numerator = numerator;
+        	this.denominator = denominator;
 	}
 	
 	Fractional simplify() {
@@ -16,15 +17,28 @@ public class Fractional {
 	
 	// Not a Number (NaN) 
 	boolean isNaN() {
-		// student code
+		return this.denominator == 0 && this.numerator == 0;
 	}
 
 	boolean isInfinity() {
-		// student code
+		return this.denominator == 0 && this.numerator != 0;
 	}
 	
 	static int sign(long numerator, long denominator) {
-		// student code
+		
+        if (numerator == 0 && denominator == 0) {
+            throw new ArithmeticException(NotANumber);
+        } else if (numerator == 0)
+            return 0;
+
+        if (denominator >= 0)
+            if (numerator > 0)
+                return +1;
+            else
+                return -1;
+        else if (numerator > 0)
+            return -1;
+       	else return 1;
 	}
 	
 	int sign() {
